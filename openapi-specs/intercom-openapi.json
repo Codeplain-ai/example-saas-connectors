@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Intercom API",
+    "version": "1.0.0",
+    "description": "API for accessing Intercom services, including authentication and retrieving a list of admins."
+  },
+  "servers": [
+    {
+      "url": "https://api.intercom.io"
+    }
+  ],
+  "paths": {
+    "/admins": {
+      "get": {
+        "summary": "List Admins",
+        "description": "Retrieve a list of all admins in the Intercom workspace.",
+        "operationId": "listAdmins",
+        "responses": {
+          "200": {
+            "description": "A list of admins.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "admins": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

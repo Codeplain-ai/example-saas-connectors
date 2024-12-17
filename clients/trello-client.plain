@@ -1,0 +1,1 @@
+{% include "saas-client.plain", saas_name: "Trello", saas_app_name: "trello_client.py", saas_openapi_json: "trello-openapi.json", saas_credentials_json: "trello-credentials.json" %}

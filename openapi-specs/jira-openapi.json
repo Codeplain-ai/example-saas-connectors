@@ -1,0 +1,71 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Jira API",
+      "version": "1.0.0",
+      "description": "API specification for connecting and authenticating to Jira, including the endpoint for accessing the list of users."
+    },
+    "servers": [
+      {
+        "url": "https://saasconnectors.atlassian.net/rest/api/3"
+      }
+    ],
+    "paths": {
+      "/users/search": {
+        "get": {
+          "summary": "Search for users",
+          "description": "Retrieve a list of users from Jira.",
+          "parameters": [
+            {
+              "name": "query",
+              "in": "query",
+              "description": "Search term for username, email, or display name.",
+              "required": false,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A list of users.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "accountId": {
+                          "type": "string"
+                        },
+                        "emailAddress": {
+                          "type": "string"
+                        },
+                        "displayName": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+            {
+              "basicAuth": []
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "basicAuth": {
+          "type": "http",
+          "scheme": "basic"
+        }
+      }
+    }
+  }

@@ -1,0 +1,1 @@
+{% include "saas-client.plain", saas_name: "Atlassian Jira", saas_app_name: "jira_client.py", saas_openapi_json: "jira-openapi.json", saas_credentials_json: "jira-credentials.json" %}

@@ -1,0 +1,44 @@
+***Definitions:***
+
+- The Client is a console Python application that interacts with {{ saas_name }} API (The API).
+
+- The List of Users is the list of {{ saas_name }} API users.
+
+
+***Non-Functional Requirements:***
+
+- The Client should be implemented in Python (The Implementation).
+
+- The Implementation should include unit tests using Unittest framework (The Unittests)! If the unittests are put in the subfolder, make sure to include __init__.py to make them discoverable.
+
+- The main executable code file should be called {{ saas_app_name }}.
+
+- The file [{{ saas_openapi_json }}](../openapi-specs/{{ saas_openapi_json }}) describes The API.
+
+
+***Test Requirements:***
+
+- End-to-end tests of The Client (The E2E Tests) should be implemented in Python using Unittest framework. The E2E Tests will be run using "python -m unittest discover" command. Therefore, if the unittests are put in the subfolder, make sure to include __init__.py to make them discoverable. 
+
+- The E2E Tests should use the real server of The API. Do not use mock server.
+
+- The main executable code file of The Client is "{{ saas_app_name }}".
+
+- The current working directory contains the file "{{ saas_app_name }}".
+
+- The Client can be executed using the command "python {{ saas_app_name }}".
+
+- The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains credentials that can be used for testing.
+
+
+***Functional Requirements:***
+
+- Implement the entry point for The Client.
+
+- The Client should take credentials json as the only positional argument. The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains an example of the credentials json.
+
+- Authenticate with The API.
+
+- Fetch The List of Users from The API.
+
+- Print The List of Users to the console.

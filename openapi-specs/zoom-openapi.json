@@ -1,0 +1,203 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Zoom API",
+      "version": "1.0.0",
+      "description": "API for accessing Zoom functionalities, including user management."
+    },
+    "servers": [
+      {
+        "url": "https://api.zoom.us/v2"
+      }
+    ],
+    "components": {
+      "securitySchemes": {
+        "OAuth2": {
+          "type": "oauth2",
+          "flows": {
+            "authorizationCode": {
+              "authorizationUrl": "https://zoom.us/oauth/authorize",
+              "tokenUrl": "https://zoom.us/oauth/token",
+              "scopes": {
+                "user:read": "Read user information"
+              }
+            }
+          }
+        },
+        "JWT": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        },
+        "basicAuth": {
+            "type": "http",
+            "scheme": "basic"
+        },
+      }
+    },
+    "security": [
+      {
+        "OAuth2": []
+      },
+      {
+        "JWT": []
+      }
+    ],
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "Get a list of users",
+          "operationId": "getUsers",
+          "security": [
+            {
+              "OAuth2": ["user:read"]
+            },
+            {
+              "JWT": []
+            }
+          ],
+          "parameters": [
+            {
+              "name": "status",
+              "in": "query",
+              "description": "Filter users by status",
+              "required": false,
+              "schema": {
+                "type": "string",
+                "enum": ["active", "inactive", "pending"]
+              }
+            },
+            {
+              "name": "page_size",
+              "in": "query",
+              "description": "Number of records per page",
+              "required": false,
+              "schema": {
+                "type": "integer",
+                "default": 30,
+                "maximum": 300
+              }
+            },
+            {
+              "name": "page_number",
+              "in": "query",
+              "description": "Page number to retrieve",
+              "required": false,
+              "schema": {
+                "type": "integer",
+                "default": 1
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A list of users",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "users": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "first_name": {
+                              "type": "string"
+                            },
+                            "last_name": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/oauth/token": {
+        "post": {
+          "summary": "Obtain an access token using account credentials",
+          "operationId": "getAccessToken",
+          "requestBody": {
+            "content": {
+              "application/x-www-form-urlencoded": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "grant_type": {
+                      "type": "string",
+                      "enum": ["account_credentials"],
+                      "description": "The grant type for the token request"
+                    },
+                    "account_id": {
+                      "type": "string",
+                      "description": "The account ID for the token request"
+                    }
+                  },
+                  "required": ["grant_type", "account_id"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Access token response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "access_token": {
+                        "type": "string",
+                        "description": "The access token"
+                      },
+                      "token_type": {
+                        "type": "string",
+                        "description": "The type of the token"
+                      },
+                      "expires_in": {
+                        "type": "integer",
+                        "description": "The duration in seconds for which the token is valid"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Error response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string",
+                        "description": "Error message"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "security": [
+              {
+                  "basicAuth": []
+              }
+          ]
+        }
+      }
+    }
+  }

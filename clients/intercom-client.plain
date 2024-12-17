@@ -1,0 +1,1 @@
+{% include "saas-client.plain", saas_name: "Intercom", saas_app_name: "intercom_client.py", saas_openapi_json: "intercom-openapi.json", saas_credentials_json: "intercom-credentials.json" %}
