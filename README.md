@@ -10,9 +10,11 @@ You need to set `PLAIN2CODE_RENDERER_DIR` environmental variable to the director
 
 ## Usage
 
-To have a SaaS connector rendered to executable software code run
+To render a SaaS connector to executable software code run
 
-`sh render.sh {{ saas_label }} -v`
+```
+sh render.sh {{ saas_label }} -v
+```
 
 where `{{ saas_label }}` is the label of the SaaS connector you want to render (e.g. `intercom`).
 
@@ -24,9 +26,22 @@ sh run.sh {{ saas_label }}
 
 ## Plain source
 
-Plain source of the Saas Connectors example application is the folder
+Plain source of the Saas Connectors example application is in the folder
 
-`clients`
+```
+clients
+```
+
+
+## SaaS Connector Specification
+
+To add a new SaaS connector all you need to do is:
+
+1. Add OpenAPI specification of the SaaS connector to the `openapi-specs` folder.
+2. Add test credentials of the SaaS connector to the `credentials` folder.
+3. Duplicate one of the existing `{{ saas_label }}-client.plain` files, name it `{{ saas_label }}-client.plain` and change it to specify the new SaaS connector.
+
+Please see [how_to_spec_saas_connector.md](how_to_spec_saas_connector.md) for details how you can use your favorite LLM to help you define the specification.
 
 ## Test credentials
 

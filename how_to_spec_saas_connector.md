@@ -29,13 +29,14 @@ Store the credentials in the file {{ saas }}_credentials.json (e.g. intercom_cre
 ## Prompt 4
 
 ```
-Does Intercom provide endpoint for accessing list of users?
+Does {{ saas }} provide endpoint for accessing list of users?
 ```
 
 ### Prompt 5
 
 ```
-Please generate OpenAPI spefication of Intercom api in json format. Include only details how to connect and authenticate to the API and the information about the endpoint for accessing list of admins?
+Please generate OpenAPI spefication of {{ saas }} api in json format. Include only details how to connect and 
+authenticate to the API and the information about the endpoint for accessing list of users?
 ```
 
 Store the file as {{saas}}-openapi.json (e.g. intercom-openapi.json) and store it in the folder *openapi-specs*.
