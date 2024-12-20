@@ -41,7 +41,7 @@ To add a new SaaS connector all you need to do is:
 2. Add test credentials of the SaaS connector to the `credentials` folder.
 3. Duplicate one of the existing `{{ saas_label }}-client.plain` files, name it `{{ saas_label }}-client.plain` and change it to specify the new SaaS connector.
 
-Please see [how_to_spec_saas_connector.md](how_to_spec_saas_connector.md) for details how you can use your favorite LLM to help you define the specification.
+Please see [How to spec a SaaS connector](how_to_spec_saas_connector.md) for details how you can use your favorite LLM to help you define the specification.
 
 ## Test credentials
 
