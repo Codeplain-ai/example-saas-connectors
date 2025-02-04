@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "https://api.trello.com/1"
+        "url": "https://api.trello.com/1/"
       }
     ],
     "paths": {

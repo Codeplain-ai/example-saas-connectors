@@ -7,7 +7,7 @@
     },
     "servers": [
       {
-        "url": "https://saasconnectors.atlassian.net/rest/api/3"
+        "url": "https://saasconnectors.atlassian.net/rest/api/3/"
       }
     ],
     "paths": {
