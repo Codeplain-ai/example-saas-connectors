@@ -13,7 +13,7 @@
 
 - The main executable code file should be called {{ saas_app_name }}.
 
-- The file [{{ saas_openapi_json }}](../openapi-specs/{{ saas_openapi_json }}) describes The API.
+- The resource [{{ saas_openapi_json }}](../openapi-specs/{{ saas_openapi_json }}) describes The API.
 
 
 ***Test Requirements:***
@@ -28,7 +28,7 @@
 
 - The Client can be executed using the command "python {{ saas_app_name }}".
 
-- The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains credentials that can be used for testing.
+- The resource [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains credentials that can be used for testing.
 
 
 ***Functional Requirements:***
