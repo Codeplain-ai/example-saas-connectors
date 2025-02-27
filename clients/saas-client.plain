@@ -33,7 +33,7 @@
 
 ***Functional Requirements:***
 
-- Implement the entry point for The Client.
+- Implement the entry point for The Client. Only create the boilerplate code - do not implement any functionality.
 
 - The Client should take credentials json as the only positional argument. The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains an example of the credentials json.
 
