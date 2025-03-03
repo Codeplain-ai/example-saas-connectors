@@ -46,7 +46,7 @@ if [ -z "${PLAIN2CODE_RENDERER_DIR:-}" ]; then
     exit 1
 fi
 
-# Removing all the end-to-end tests before rendering.
-rm -rf clients/$saas_label/e2e_tests
+# Removing all the conformance tests before rendering.
+rm -rf clients/$saas_label/conformance_tests
 
-python $PLAIN2CODE_RENDERER_DIR/plain2code.py clients/$saas_label-client.plain --build-folder=clients/$saas_label/build --unittests-script=$PLAIN2CODE_RENDERER_DIR/test_scripts/run_unittests_python.sh --e2e-tests-script=$PLAIN2CODE_RENDERER_DIR/test_scripts/run_e2e_tests_python.sh --e2e-tests-folder=clients/$saas_label/e2e_tests --debug ${VERBOSE:+-v}
+python $PLAIN2CODE_RENDERER_DIR/plain2code.py clients/$saas_label-client.plain --build-folder=clients/$saas_label/build --unittests-script=$PLAIN2CODE_RENDERER_DIR/test_scripts/run_unittests_python.sh --conformance-tests-script=$PLAIN2CODE_RENDERER_DIR/test_scripts/run_conformance_tests_python.sh --conformance-tests-folder=clients/$saas_label/conformance_tests --debug ${VERBOSE:+-v}

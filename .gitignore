@@ -3,4 +3,4 @@ __pycache__/
 
 credentials/
 build*/
-e2e_tests/
+conformance_tests/

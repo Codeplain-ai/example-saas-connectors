@@ -18,9 +18,11 @@
 
 ***Test Requirements:***
 
-- End-to-end tests of The Client (The E2E Tests) should be implemented in Python using Unittest framework. The E2E Tests will be run using "python -m unittest discover" command. Therefore, if the unittests are put in the subfolder, make sure to include __init__.py to make them discoverable. 
+- The Conformance Tests of The Client should be implemented in Python using Unittest framework. The Conformance Tests will be run using "python -m unittest discover" command. Therefore, if the unittests are put in the subfolder, make sure to include __init__.py to make them discoverable. 
 
-- The E2E Tests should use the real server of The API. Do not use mock server.
+- The Conformance Tests must be implemented and executed - do not use unittest.skip() or any other test skipping functionality.
+
+- The Conformance Tests should use the real server of The API - do not use mock server.
 
 - The main executable code file of The Client is "{{ saas_app_name }}".
 
@@ -33,7 +35,7 @@
 
 ***Functional Requirements:***
 
-- Implement the entry point for The Client. Only create the boilerplate code - do not implement any functionality.
+- Implement the entry point for The Client.
 
 - The Client should take credentials json as the only positional argument. The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains an example of the credentials json.
 
