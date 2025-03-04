@@ -1,8 +1,6 @@
 ***Definitions:***
 
-- The Client is a console Python application that interacts with {{ saas_name }} API (The API).
-
-- The List of Users is the list of {{ saas_name }} API users.
+- The Client is a console application.
 
 
 ***Non-Functional Requirements:***
@@ -13,8 +11,6 @@
 
 - The main executable code file should be called {{ saas_app_name }}.
 
-- The resource [{{ saas_openapi_json }}](../openapi-specs/{{ saas_openapi_json }}) describes The API.
-
 
 ***Test Requirements:***
 
@@ -22,20 +18,42 @@
 
 - The Conformance Tests must be implemented and executed - do not use unittest.skip() or any other test skipping functionality.
 
-- The Conformance Tests should use the real server of The API - do not use mock server.
-
 - The main executable code file of The Client is "{{ saas_app_name }}".
 
 - The current working directory contains the file "{{ saas_app_name }}".
 
 - The Client can be executed using the command "python {{ saas_app_name }}".
 
-- The resource [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains credentials that can be used for testing.
 
+# The Python console application boilerplate
 
 ***Functional Requirements:***
 
 - Implement the entry point for The Client.
+
+
+#  The SaaS Client
+
+***Definitions:***
+
+- The Client interacts with {{ saas_name }} API (The API).
+
+- The List of Users is the list of {{ saas_name }} API users.
+
+
+***Non-Functional Requirements:***
+
+- The resource [{{ saas_openapi_json }}](../openapi-specs/{{ saas_openapi_json }}) describes The API.
+
+
+***Test Requirements:***
+
+- The Conformance Tests should use the real server of The API - do not use mock server.
+
+- The resource [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains credentials that can be used for testing.
+
+
+***Functional Requirements:***
 
 - The Client should take credentials json as the only positional argument. The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains an example of the credentials json.
 
