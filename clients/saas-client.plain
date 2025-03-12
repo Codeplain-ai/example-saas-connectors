@@ -9,7 +9,7 @@
 
 - The Implementation should include unit tests using Unittest framework (The Unittests)! If the unittests are put in the subfolder, make sure to include __init__.py to make them discoverable.
 
-- The main executable code file should be called {{ saas_app_name }}.
+- The main executable code file of The Client should be called {{ saas_app_name }}.
 
 
 ***Test Requirements:***
