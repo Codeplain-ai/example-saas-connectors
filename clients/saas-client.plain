@@ -1,42 +1,10 @@
-***Definitions:***
-
-- The Client is a console application.
-
-
-***Non-Functional Requirements:***
-
-- The Client should be implemented in Python (The Implementation).
-
-- The Implementation should include unit tests using Unittest framework (The Unittests)! If the unittests are put in the subfolder, make sure to include __init__.py to make them discoverable.
-
-- The main executable code file of The Client should be called {{ saas_app_name }}.
-
-
-***Test Requirements:***
-
-- The Conformance Tests of The Client should be implemented in Python using Unittest framework. The Conformance Tests will be run using "python -m unittest discover" command. Therefore, if the unittests are put in the subfolder, make sure to include __init__.py to make them discoverable. 
-
-- The Conformance Tests must be implemented and executed - do not use unittest.skip() or any other test skipping functionality.
-
-- The main executable code file of The Client is "{{ saas_app_name }}".
-
-- The current working directory contains the file "{{ saas_app_name }}".
-
-- The Client can be executed using the command "python {{ saas_app_name }}".
-
-
-# The Python console application boilerplate
-
-***Functional Requirements:***
-
-- Implement the entry point for The Client.
-
+{% include "python-console-app-template.plain", main_executable_file_name: saas_app_name %}
 
 #  The SaaS Client
 
 ***Definitions:***
 
-- The Client interacts with {{ saas_name }} API (The API).
+- The App interacts with {{ saas_name }} API (The API).
 
 - The List of Users is the list of {{ saas_name }} API users.
 
@@ -55,7 +23,7 @@
 
 ***Functional Requirements:***
 
-- The Client should take credentials json as the only positional argument. The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains an example of the credentials json.
+- The App should take credentials json as the only positional argument. The file [{{ saas_credentials_json }}](../credentials/{{ saas_credentials_json }}) contains an example of the credentials json.
 
 - Authenticate with The API.
 
