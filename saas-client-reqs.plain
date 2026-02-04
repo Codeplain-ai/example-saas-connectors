@@ -1,0 +1,15 @@
+---
+description: 'SaaS client application requirements'
+---
+
+***definitions***
+
+- :API: is the API of the 3rd party SaaS service.
+
+- :ListOfUsers: is the list of users of the 3rd party SaaS service.
+
+- :APIDocs: are the docs of :API:.
+
+***test reqs***
+
+- :ConformanceTests: should use real :API: server - do not use mock server.
