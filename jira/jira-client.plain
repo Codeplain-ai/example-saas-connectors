@@ -1,0 +1,30 @@
+#  The Atlassian Jira Client
+
+***Definitions:***
+
+- The App interacts with Atlassian Jira API (The API).
+
+- The List of Users is the list of Atlassian Jira API users.
+
+
+***Non-Functional Requirements:***
+
+- The resource [jira-openapi.json](../openapi-specs/jira-openapi.json) describes The API.
+
+
+***Test Requirements:***
+
+- The Conformance Tests should use the real server of The API - do not use mock server.
+
+- The resource [jira-credentials.json](../credentials/jira-credentials.json) contains credentials that can be used for testing.
+
+
+***Functional Requirements:***
+
+- The App should take credentials json as the only positional argument. The file [jira-credentials.json](../credentials/jira-credentials.json) contains an example of the credentials json.
+
+- Authenticate with The API.
+
+- Fetch The List of Users from The API.
+
+- Print The List of Users to the console.
