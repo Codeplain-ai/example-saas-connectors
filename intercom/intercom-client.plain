@@ -1,0 +1,24 @@
+---
+description: 'Intercom client application'
+import:
+  - python-console-app-template
+  - saas-client-reqs
+---
+
+***implementation reqs***
+
+- The resource [intercom-openapi.json](intercom-openapi.json) describes :API:.
+
+- :Implementation: should always maintain up to date README.md with documentation about everything the end user of the :App: needs to know about.
+
+***test reqs***
+
+- The resource [intercom-credentials.json](intercom-credentials.json) contains credentials that can be used for testing.
+
+***functional specs***
+
+- :App: should take credentials json as the only positional argument. 
+
+- :App: should authenticate with :API:.
+
+- :App: should fetch :ListOfUsers: from :API: and print them to the console.
