@@ -1,48 +1,19 @@
 # SaaS Connectors example application
 
-Example application how to implement SaaS connectors in Plain.
+This project represents SaaS connectors built with [***plain](https://plainlang.org/).
 
-## Prerequisites
+Refer to [*codeplain website](https://codeplain.ai) for installation instructions.
 
-You need ***plain2code*** renderer set up. Please see [plain2code_client](https://github.com/Codeplain-ai/plain2code_client) repository for details how to set it up.
+## Why SaaS Connectors are easy with ***plain?
 
-You need to set `PLAIN2CODE_RENDERER_DIR` environmental variable to the directory containing the plain2code.py script.
+Connectors similar to one another, but their complexity lies with scaling. 
 
-## Usage
+Because ***plain simplifies abstraction details of software code, but maintains the rigor and expressiveness of software language, it's very easy to scale the connectors to multiple SaaS services.
 
-To render a SaaS connector to executable software code run
+This project exemplifies how to create new connectors in the project.
 
-```
-sh render.sh {{ saas_label }} -v
-```
+## How to create a new SaaS connector
 
-where `{{ saas_label }}` is the label of the SaaS connector you want to render (e.g. `intercom`).
-
-The resulting software code will be stored to `clients/{{ saas_label }}/build` folder. To run it execute
-
-```
-sh run.sh {{ saas_label }}
-```
-
-## Plain source
-
-Plain source of the Saas Connectors example application is in the folder
-
-```
-clients
-```
-
-
-## SaaS Connector Specification
-
-To add a new SaaS connector all you need to do is:
-
-1. Add OpenAPI specification of the SaaS connector to the `openapi-specs` folder.
-2. Add test credentials of the SaaS connector to the `credentials` folder.
-3. Duplicate one of the existing `{{ saas_label }}-client.plain` files, name it `{{ saas_label }}-client.plain` and change it to specify the new SaaS connector.
-
-Please see [How to spec a SaaS connector](how_to_spec_saas_connector.md) for details how you can use your favorite LLM to help you define the specification.
-
-## Test credentials
-
-You should have received test credentials when your Anthropic Claude API key was authorized to have access to plain2code rendered. Please contact Codeplain.ai support at support@codeplain.ai if that was not the case.
+- Copy one of the existing connectors folder (e.g. `trello`) and name it `{{ saas_name }}`.
+- Procure the documentation about the 3rd party SaaS service (e.g. `Trello`).
+- Update the ***plain specification with documentation about the 3rd party SaaS service.
