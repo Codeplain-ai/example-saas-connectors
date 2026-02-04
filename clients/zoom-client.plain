@@ -1,1 +1,0 @@
-{% include "saas-client.plain", saas_name: "Zoom", saas_app_name: "zoom_client.py", saas_openapi_json: "zoom-openapi.json", saas_credentials_json: "zoom-credentials.json" %}
