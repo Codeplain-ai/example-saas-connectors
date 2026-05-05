@@ -13,7 +13,7 @@ import:
 
 ***test reqs***
 
-- The resource [zoom-credentials.json](zoom-credentials.json) contains credentials that can be used for testing.
+- The resource [zoom-credentials.json](../test_credentials/zoom-credentials.json) contains credentials that can be used for testing.
 
 ***functional specs***
 

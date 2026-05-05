@@ -13,7 +13,7 @@ import:
 
 ***test reqs***
 
-- The resource [trello-credentials.json](trello-credentials.json) contains credentials that can be used for testing.
+- The resource [trello-credentials.json](../test_credentials/trello-credentials.json) contains credentials that can be used for testing.
 
 ***functional specs***
 

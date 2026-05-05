@@ -1,30 +1,24 @@
-#  The Atlassian Jira Client
+---
+description: 'The Atlassian Jira client application'
+import:
+  - python-console-app-template
+  - saas-client-reqs
+---
 
-***Definitions:***
+***implementation reqs***
 
-- The App interacts with Atlassian Jira API (The API).
+- The resource [jira-openapi.json](jira-openapi.json) describes :API:.
 
-- The List of Users is the list of Atlassian Jira API users.
+- :Implementation: should always maintain up to date README.md with documentation about everything the end user of the :App: needs to know about.
 
+***test reqs***
 
-***Non-Functional Requirements:***
+- The resource [jira-credentials.json](../test_credentials/jira-credentials.json) contains credentials that can be used for testing.
 
-- The resource [jira-openapi.json](../openapi-specs/jira-openapi.json) describes The API.
+***functional specs***
 
+- :App: should take credentials json as the only positional argument. 
 
-***Test Requirements:***
+- :App: should authenticate with :API:.
 
-- The Conformance Tests should use the real server of The API - do not use mock server.
-
-- The resource [jira-credentials.json](../credentials/jira-credentials.json) contains credentials that can be used for testing.
-
-
-***Functional Requirements:***
-
-- The App should take credentials json as the only positional argument. The file [jira-credentials.json](../credentials/jira-credentials.json) contains an example of the credentials json.
-
-- Authenticate with The API.
-
-- Fetch The List of Users from The API.
-
-- Print The List of Users to the console.
+- :App: should fetch :ListOfUsers: from :API: and print them to the console.

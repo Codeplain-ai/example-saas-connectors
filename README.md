@@ -1,19 +1,36 @@
-# SaaS Connectors example application
+# SaaS Connectors Example Application
 
-This project represents SaaS connectors built with [***plain](https://plainlang.org/).
+This project contains SaaS connectors built with [***plain](https://plainlang.org/).
 
-Refer to [*codeplain website](https://codeplain.ai) for installation instructions.
+Refer to the [*codeplain website](https://codeplain.ai) for installation instructions.
 
-## Why SaaS Connectors are easy with ***plain?
+## Why Are SaaS Connectors Easy with ***plain?
 
-Connectors similar to one another, but their complexity lies with scaling. 
+Connectors are similar to one another, but their complexity lies in scaling.
 
-Because ***plain simplifies abstraction details of software code, but maintains the rigor and expressiveness of software language, it's very easy to scale the connectors to multiple SaaS services.
+Because ***plain simplifies software abstraction details while maintaining the rigor and expressiveness of a programming language, it is easy to scale connectors across multiple SaaS services.
 
-This project exemplifies how to create new connectors in the project.
+This project shows how to create additional connectors.
 
-## How to create a new SaaS connector
+## Running *codeplain Rendering
 
-- Copy one of the existing connectors folder (e.g. `trello`) and name it `{{ saas_name }}`.
-- Procure the documentation about the 3rd party SaaS service (e.g. `Trello`).
-- Update the ***plain specification with documentation about the 3rd party SaaS service.
+Change the current directory to one of the examples (Intercom/Atlassian Jira/Trello/Zoom).
+
+For the Zoom example, run:
+```
+codeplain zoom-client.plain
+```
+
+After rendering finishes, the generated code will be available in the `/build` subfolder.
+
+### Prerequisites
+
+Create test credentials for the service and add them to the corresponding files in the `/test_credentials` subfolder.
+
+Example credential structures are provided in the `.json.example` files.
+
+## How to Create a New SaaS Connector
+
+- Copy one of the existing connector folders (e.g. `trello`) and name it `{{ saas_name }}`.
+- Gather documentation for the third-party SaaS service (e.g. `Trello`).
+- Update the ***plain specification with documentation for the third-party SaaS service.

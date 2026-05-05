@@ -13,7 +13,7 @@ import:
 
 ***test reqs***
 
-- The resource [intercom-credentials.json](intercom-credentials.json) contains credentials that can be used for testing.
+- The resource [intercom-credentials.json](../test_credentials/intercom-credentials.json) contains credentials that can be used for testing.
 
 ***functional specs***
 
